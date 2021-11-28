@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Source+Sans+Pro:ital,wght@0,200;0,300; 0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div id="logo">
+                <img id="logo_img" src="photo/doco_logo.png" alt="document">
+            </div>
+            <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#jobs">Get work</a></li>
+            <li class="item"><a href="#our_clients">Our clients</a></li>
+            <li class="item"><a href="#contact">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <section id="home">
+        <h1 class="h_heading">Welcome to my Project company</h1>
+        <p id="home_p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut modi maxime officiis, est nam sapiente pariatur atque vitae, dicta illum ipsam reprehenderit?
+        </p>
+                 <button class="btn">Order now</button>
+    </section> -->
+    <section id="jobs">
+        <img src="photo/people.png" alt="not" srcset="" id="photo">
+        <div class="container">
+            <h3 id="para"> will automically assign to you</h3>
+            <h3 id="para2">Select your name from dropdown and work</h3>
+            <h3 id="para">--Company inte1--</h3>
+            <hr>
+            <div class="dropdown-container">
+                <label for="name" id="select">Select Your name:</label>
+                <select name="select" id="name" onchange="showoption(this)">
+                    <option value="1" id="hello">--Select your name---</option>
+                    <option value="0" id="al">Alok</option>
+                    <option value="2">Sans</option>
+                    <option value="3">Saif</option>
+                    <option value="4">Shashi</option>
+                    <option value="5">Salman</option>
+                    <option value="6">Sharukh</option>
+                    <option value="7">Hritik</option>
+                    <option value="8">Raju</option>
+                    <option value="9">Aditya</option>
+                    <option value="10">Rahul</option>
+                </select>
+            </div>
+                <div id="result"></div>
+                <div id="message"></div>
+                <div id="message2"></div>
+                <button id="cancel" style="display:none" onclick="myStopFunction()">Cancel</button>
+                <button id="redirect" style="display:none" onclick="agianRedirect()">Redirect</button>
+            </div>
+    </section>
+</body>
+<script>
+    var myVar=0;
+    const displayMessage=()=>{
+        const messageArray=["Your work is do make website ui","Your work is do make webiste navbar","Your work is make loader","Your work is do make backened","Your work is do make databse","Your work is write code in mysql","Your work is in support","Your work is to make website in react","Your work is do make website in jquery","Your work is do make webiste angular"];
+        var randomIndex = Math.floor(Math.random() *messageArray.length); 
+        document.getElementById("result").innerHTML=messageArray[randomIndex];
+        redirecting();
+    }
+    const showoption=(s)=>{
+       let a=s[s.selectedIndex].id;
+       displayMessage();
+    }
+    const redirecting=()=>{
+        document.getElementById("cancel").style.display="block";
+        setTimeout(() => {
+            document.getElementById("result").style.display="none";
+            document.getElementById("message").innerHTML="You are Redirecting to another page To assign you work if want to cancel then click on cancel button";
+        },2000);
+        redirect();
+    
+    }
+        const redirect=()=>{
+        myVar=setTimeout(() => {
+            window.location.href = "assignWork.html";
+        }, 5000);
+    }
+      const agianRedirect=()=>{
+        window.location.href = "assignWork.html";
+      }
+    function myStopFunction() {
+        console.log("Working");
+        clearTimeout(myVar);
+        document.getElementById("message").style.display="none";
+        document.getElementById("message2").innerHTML="You have cancelled redirecting to redirect again click on redirect button";
+        document.getElementById("redirect").style.display="block";
+    }
+</script>
+</html>

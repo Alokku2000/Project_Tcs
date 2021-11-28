@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign-work-employess</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assignWork.css">
+</head>
+
+<body>
+     <header>
+        <nav id="navbar">
+            <div id="logo">
+                <img id="logo_img" src="photo/doco_logo.png" alt="document">
+            </div>
+            <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services">Our services</a></li>
+            <li class="item"><a href="#our_clients">Our clients</a></li>
+            <li class="item"><a href="#contact">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <form action="">
+                <div class="file-container">
+                    <label for="fileName" class="label-text">Upload resume</label>
+                    <input type="file" name="myFile" id="fileName" onchange="return fileValidation()">
+                </div>
+                <div class="file-container">
+                    <label for="file" class="label-text" >Upload photo</label>
+                    <input type="file" name="myFile" id="file" onchange="return fileValidationn()">
+                </div>
+                <div class="file-container">
+                    <label for="fileName" class="label-text" >Upload certificate</label>
+                    <input type="file" name="myFile" id="fileName1" onchange="return fileValidation1()">
+                </div>
+                <div class="file-container">
+                    <label for="fileName" class="label-text" >Upload Marksheet</label>
+                    <input type="file" name="myFile" id="fileName2" onchange="return fileValidation2()">
+                </div>
+            </form>
+            <!-- <button onclick = "GFG_Fun()">Sumbit </button> -->
+            <input type="submit" value="sumbit the Form" onclick = "GFG_Fun()" id="sumbit">
+        </div>
+
+    </section>
+</body>
+<script>
+    function fileValidation() {
+        var fileInput =document.getElementById('fileName');
+
+        var filePath = fileInput.value;
+
+        // Allowing file type
+        var allowedExtensions = /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
+
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Invalid file type');
+            fileInput.value = '';
+            return false;
+        }
+    }
+    function fileValidation1() {
+        var fileInput =document.getElementById('fileName1');
+
+        var filePath = fileInput.value;
+
+        // Allowing file type
+        var allowedExtensions = /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
+
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Invalid file type');
+            fileInput.value = '';
+            return false;
+        }
+    }
+    function fileValidation2() {
+        var fileInput =document.getElementById('fileName2');
+
+        var filePath = fileInput.value;
+
+        // Allowing file type
+        var allowedExtensions = /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
+
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Invalid file type');
+            fileInput.value = '';
+            return false;
+        }
+    }
+    function fileValidationn() {
+            var fileInput = document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+        }
+        function GFG_Fun() {
+            
+            const file = document.getElementById("file");
+            const fileName=document.getElementById("fileName");
+            const fileName1=document.getElementById("fileName1");
+            const fileName2=document.getElementById("fileName2");
+            if((file.files.length ||fileName.files.length ||fileName1.files.length ||fileName2.files.length )!== 0 )
+            {
+                alert("Success: You form is sumbitted")
+            } else 
+            {
+                alert("Error: Select at least one file");
+            }
+        }
+</script>
+
+</html>

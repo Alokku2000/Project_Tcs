@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* nav bar styling */
+html{
+  scroll-behavior: smooth;
+}
+#navbar{
+  position:sticky;
+  top:0px;
+  left:0px;
+  display: flex;
+  justify-content:space-around;
+  backdrop-filter: blur(20px);
+  z-index: 1;
+}
+#navbar::before{
+  content:" ";
+  background-color: black;
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top:0px;
+  z-index: -1;
+  opacity: 0.5;
+}  
+/* styling navbar ul element */
+#navbar ul{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  padding: 0px 0px;
+}
+#navbar ul li{
+  list-style-type:none;
+  font-size: 1.3rem;
+}
+/* styling navbar ul li a  element  */
+#navbar ul li a{
+  display: block;
+  text-decoration: none;
+  color:rgb(240, 239, 239);
+  padding:4px 22px;
+  transition: all 1s ease-in-out 0s;
+}
+/* hover a  */
+#navbar ul li a:hover{
+  color:black;
+  background-color: rgba(255, 255, 255, 0.267); 
+  border-radius: 10px;
+  transform: scale(1.3);
+  text-shadow: 2px 2px 4px white; 
+} 
+#logo{
+  padding: 10px 10px;
+  width: 30%;
+  margin: 0px 0px;
+}
+#logo_img{
+    display: block;
+    width:13%;
+    margin:3px 13px;
+    clip-path: circle(50% at 50% 50%);
+}
+/* body to assign work  */
+#jobs::before{
+  content: " ";
+  background: url("photo/photo-office.jpg") no-repeat center center/cover;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  z-index: -1;
+  opacity: 0.6;
+} 
+/* select tag box css  */
+.container{
+  z-index: 1;
+  background-color:rgba(240, 200, 125, 0.438);
+  backdrop-filter: blur(2px);
+  display:flex;
+  height: 400px;
+  width:40%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:2px solid black;
+  box-shadow: 10px 10px 18px black;
+  padding: 15px;
+  position:absolute;
+  top:170px;
+  left:698px;
+}
+#para{
+  /* font-size: 0.9rem; */
+  margin-top: -114px;
+  margin-bottom: 60px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+#para2{
+  /* font-size: 0.9rem; */
+  margin-top: -114px;
+  margin-bottom: 60px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+.display-option{
+  display:none;
+}
+/* select tag css  */
+#select{
+  font-size: 1.4rem;
+  margin-left: -25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* dropdown css  */
+#name{
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background:rgba(209, 114, 58, 0.226);
+}
+#result,#message,#message2{
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#cancel{
+  /* display:none; */
+  position: absolute;
+  top:265px;
+  left:55px;
+  background-color:rgba(240, 200, 125, 0.438);
+  width:80%;
+  padding: 10px;
+  border-radius: 10px;
+}
+#redirect{
+  position: absolute;
+  top:324px;
+  left:55px;
+  border-radius: 10px;
+  background-color:rgba(240, 200, 125, 0.438);
+  width:80%;
+  padding: 10px;
+}
+/* result message  */
+#result,#message,#message2{
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#photo{
+  display:block;
+  position: absolute;
+  top:114px;
+  left:96px;
+  width:35%;
+}
